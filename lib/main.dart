@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
 
 class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-  @override
+  final _biggerFont = TextStyle(fontSize: 18.0);
   Widget _buildSuggestions() {
     return ListView.builder(
       itemBuilder: /*1*/ (context, i) {
@@ -32,7 +31,7 @@ class RandomWordsState extends State<RandomWords> {
         }
         return _buildRow(_suggestions[index]);
       },
-    )
+    );
   }
   Widget _buildRow(WordPair pair) {
     return ListTile(
@@ -42,6 +41,7 @@ class RandomWordsState extends State<RandomWords> {
       ),
     );
   }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(  
